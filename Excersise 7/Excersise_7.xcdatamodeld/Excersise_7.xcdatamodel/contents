@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Checking" representedClassName="Checking" syncable="YES" codeGenerationType="class">
+        <attribute name="accountNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentBalance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerNumber" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Loan" representedClassName="Loan" syncable="YES" codeGenerationType="class">
+        <attribute name="accountNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentBalance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customerNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="initialBalance" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interestRate" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
+        <attribute name="accountNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isProcessed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Transaction" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Loan" positionX="-54" positionY="27" width="128" height="135"/>
+        <element name="Checking" positionX="-36" positionY="72" width="128" height="90"/>
+    </elements>
 </model>

@@ -13,6 +13,7 @@
 		4E3D5E102093877200ED1082 /* Excersise_7.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E3D5E0E2093877200ED1082 /* Excersise_7.xcdatamodeld */; };
 		4E3D5E122093877200ED1082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D5E112093877200ED1082 /* Assets.xcassets */; };
 		4E3D5E152093877200ED1082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E3D5E132093877200ED1082 /* LaunchScreen.storyboard */; };
+		4EF8B9582097BCBA0038F136 /* LoanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF8B9572097BCBA0038F136 /* LoanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4E3D5E112093877200ED1082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E3D5E142093877200ED1082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E3D5E162093877200ED1082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF8B9572097BCBA0038F136 /* LoanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				4E3D5E132093877200ED1082 /* LaunchScreen.storyboard */,
 				4E3D5E162093877200ED1082 /* Info.plist */,
 				4E3D5E0E2093877200ED1082 /* Excersise_7.xcdatamodeld */,
+				4EF8B9572097BCBA0038F136 /* LoanViewController.swift */,
 			);
 			path = "Excersise 7";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EF8B9582097BCBA0038F136 /* LoanViewController.swift in Sources */,
 				4E3D5E102093877200ED1082 /* Excersise_7.xcdatamodeld in Sources */,
 				4E3D5E0A2093877200ED1082 /* ViewController.swift in Sources */,
 				4E3D5E082093877200ED1082 /* AppDelegate.swift in Sources */,

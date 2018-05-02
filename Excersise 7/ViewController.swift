@@ -35,6 +35,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        if currentLoan != nil {
+            sgmtControl.selectedSegmentIndex = 1
+            txtAccountNumber.text = currentLoan!.accountNumber
+            txtCustomerNumber.text = currentLoan!.customerNumber
+            txtInitialBalance.text = currentLoan!.initialBalance
+            txtcurrentBalance.text = currentLoan!.currentBalance
+            txtAmount.text = currentLoan!.amount
+            txtinterestRate.text = currentLoan!.interestRate
+        }
+        
         changeMode(self)
         let textFields: [UITextField] = [txtAccountNumber, txtType, txtAmount, txtCustomerNumber, txtInitialBalance, txtcurrentBalance, txtinterestRate]
         
@@ -69,34 +79,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
             for textField in loanTextFields{
                 textField.isEnabled = false
                 textField.borderStyle = UITextBorderStyle.none
-                textField.text = ""
             }
             for textField in checkingTextFields{
                 textField.isEnabled = false
                 textField.borderStyle = UITextBorderStyle.none
-                textField.text = ""
             }
             for textField in transactionTextFields{
                 textField.isEnabled = true
                 textField.borderStyle = UITextBorderStyle.roundedRect
-                textField.text = ""
             }
         }
         else if sgmtControl.selectedSegmentIndex == 1 {
             for textField in transactionTextFields{
                 textField.isEnabled = false
                 textField.borderStyle = UITextBorderStyle.none
-                textField.text = ""
             }
             for textField in checkingTextFields{
                 textField.isEnabled = false
                 textField.borderStyle = UITextBorderStyle.none
-                textField.text = ""
             }
             for textField in loanTextFields{
                 textField.isEnabled = true
                 textField.borderStyle = UITextBorderStyle.roundedRect
-                textField.text = ""
             }
             
         }
@@ -104,17 +108,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             for textField in transactionTextFields{
                 textField.isEnabled = false
                 textField.borderStyle = UITextBorderStyle.none
-                textField.text = ""
             }
             for textField in loanTextFields{
                 textField.isEnabled = false
                 textField.borderStyle = UITextBorderStyle.none
-                textField.text = ""
             }
             for textField in checkingTextFields{
                 textField.isEnabled = true
                 textField.borderStyle = UITextBorderStyle.roundedRect
-                textField.text = ""
             }
         }
     }
@@ -127,7 +128,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 currentTransaction = Transaction(context: context)
             }
             appDelegate.saveContext()
-            changeMode(self)
+            
             alertObjectSaved(Type: type)
         } else if sgmtControl.selectedSegmentIndex == 1 { //Loan
             let type = "Loan"
@@ -136,7 +137,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 currentLoan = Loan(context: context)
             }
             appDelegate.saveContext()
-            changeMode(self)
+          
             alertObjectSaved(Type: type)
 
         } else { //Checking
@@ -146,7 +147,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 currentChecking = Checking(context: context)
             }
             appDelegate.saveContext()
-            changeMode(self)
+            
             alertObjectSaved(Type: type)
 
         }

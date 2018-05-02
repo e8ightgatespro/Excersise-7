@@ -36,7 +36,7 @@
                                         <rect key="frame" x="0.0" y="38" width="375" height="565"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="En1-Ui-7pQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qno-yL-rTB">
                                                         <rect key="frame" x="59.5" y="0.0" width="256" height="270"/>
@@ -204,13 +204,6 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C0-GA-w6O">
-                                                        <rect key="frame" x="129.5" y="320" width="116" height="30"/>
-                                                        <state key="normal" title="Loan Information"/>
-                                                        <connections>
-                                                            <segue destination="ENJ-HZ-Qtx" kind="show" identifier="ListLoanInfo" id="W7y-YC-De0"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -249,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="121"/>
+            <point key="canvasLocation" x="714" y="-119"/>
         </scene>
         <!--Loan Table View Controller-->
         <scene sceneID="ghr-Eg-Zyx">
@@ -260,13 +253,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="loanIdentifier" id="nXg-TK-rVC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoanCell" textLabel="nAW-db-Zox" detailTextLabel="oxU-LS-HZ4" style="IBUITableViewCellStyleSubtitle" id="nXg-TK-rVC">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nXg-TK-rVC" id="vIr-fL-nTf">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nAW-db-Zox">
+                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oxU-LS-HZ4">
+                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="EditLoan" id="oEr-RH-K4V"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -274,10 +286,17 @@
                             <outlet property="delegate" destination="ENJ-HZ-Qtx" id="abL-xc-IgB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="fwk-I5-z6z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2kX-WK-PTB">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="o5n-aW-tB0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blI-Dl-aiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1690" y="121"/>
+            <point key="canvasLocation" x="-316" y="-119"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h6X-gh-GVT">
@@ -290,12 +309,15 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nSA-pF-BLb"/>
+                        <segue destination="ENJ-HZ-Qtx" kind="relationship" relationship="rootViewController" id="Fcc-CC-E3b"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sq-ue-NsG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-140" y="121"/>
+            <point key="canvasLocation" x="-1204" y="-119"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oEr-RH-K4V"/>
+    </inferredMetricsTieBreakers>
 </document>

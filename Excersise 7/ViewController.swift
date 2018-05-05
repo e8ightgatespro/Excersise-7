@@ -54,6 +54,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        appDelegate.saveContext()
+    }
+    
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         currentTransaction?.accountNumber = txtAccountNumber.text
         currentTransaction?.type = txtType.text
